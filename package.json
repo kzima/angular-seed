@@ -1,7 +1,11 @@
 {
-  "name": "angualrjs-seed",
-  "description": "A starter project for angular js",
+  "name": "virigin-australia",
+  "description": "Virigin Australia Project",
   "devDependencies": {
+  			"grunt": "~0.4.1",
+  			"grunt-contrib-jshint": "~0.6.3",
+  			"grunt-contrib-less" : "*",
+        "grunt-contrib-watch" : "*",
         "phantomjs" : "*",
         "karma" : "*",
         "karma-junit-reporter" : "*",    

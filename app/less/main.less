@@ -1,0 +1,25 @@
+@import "bootstrap/bootstrap.less";
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+
+/* general */
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+/* Utils */
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+.no-margin {
+  margin: 0 !important;
+}
+.no-border {
+  border: none !important;
+}
+
+div.spacer {
+  .clearfix;
+  margin-bottom: 20px;
+} 
