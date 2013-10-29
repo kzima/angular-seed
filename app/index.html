@@ -53,14 +53,22 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li ng-class="{active: isRoute('/view1')}"><a href="#view1">View1</a></li>
-            <li ng-class="{active: isRoute('/view2')}"><a href="#view2">View2</a></li>
+            <li ng-class="{active: $state.includes('home')}"><a ui-sref="home">View1</a></li>
+            <li ng-class="{active: $state.includes('view2')}"><a ui-sref="view2">View2</a></li>
           </ul>
         </div><!--/.navbar-collapse -->
       </div>
     </div>
-
+       <pre>
+      <!-- Here's some values to keep an eye on in the sample in order to understand $state and $stateParams -->
+      $state = {{$state.current.name}}
+      $stateParams = {{$stateParams}}
+      $state full url = {{ $state.$current.url.source }}
+      <!-- $state.$current is not a public api, we are using it to
+           display the full url for learning purposes-->
+    </pre>
     <div ng-view></div>
+    <section ui-view></section>
     
     <div class="container">
       <footer>
@@ -73,7 +81,7 @@
     <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
     <![endif]-->
     <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular/angular-route.js"></script>
+    <script src="lib/angular-ui-router/angular-ui-router.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/services/services.js"></script>
     <script src="js/controllers/HeaderController.js"></script>
