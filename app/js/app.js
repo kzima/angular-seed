@@ -6,8 +6,7 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.filters',
   'myApp.services',
-  'myApp.directives',
-  'myApp.controllers'
+  'myApp.directives'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
