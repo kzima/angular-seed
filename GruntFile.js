@@ -22,11 +22,11 @@ module.exports = function(grunt) {
         },
         watch: {
             development : {
-                files: "app/less/*",
+                files: ["app/*", "app/src/**"],
                 tasks: ["less:development"]
             },
             production : {
-                files: "app/less/*",
+                files: ["app/*", "app/src/**"],
                 tasks: ["less:production"]
             },
            
