@@ -19,7 +19,12 @@ config(['$stateProvider', function ($stateProvider) {
     })
 }]).
 run(['$rootScope', '$state', '$stateParams', function ($rootScope,   $state,   $stateParams) {
+
+	//go to starting page
  	$state.transitionTo('home'); 
+
+ 	// It's very handy to add references to $state and $stateParams to the $rootScope
   $rootScope.$state = $state;
   $rootScope.$stateParams = $stateParams;
-}])
+
+}]);
