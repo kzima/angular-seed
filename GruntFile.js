@@ -4,7 +4,9 @@ module.exports = function(grunt) {
           development: {
             options: {
               paths: ["app/css"],
-              sourceMap: true
+              sourceMap: true,
+              relativeUrls: true, 
+              sourceMapRootpath: "../.."
             },
             files: {
               "app/css/main.css": "app/less/main.less"
@@ -22,17 +24,20 @@ module.exports = function(grunt) {
         },
         watch: {
             development : {
-                files: ["app/*", "app/src/**"],
+                options: {
+                  livereload: true
+                }
+                files: ["app/less/*", "app/src/**"],
                 tasks: ["less:development"]
             },
             production : {
-                files: ["app/*", "app/src/**"],
+                files: ["app/less/*", "app/src/**"],
                 tasks: ["less:production"]
             },
            
         }
     });
-    //load pliugins
+    //load plugins
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
     // Default task(s).
