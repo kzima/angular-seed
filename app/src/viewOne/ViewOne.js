@@ -2,7 +2,9 @@ angular.module( 'myApp.view1', [
   'ui.router'
 ])
 
-.config(['$stateProvider', function config( $stateProvider ) {
+.config([
+	'$stateProvider', 
+	function config( $stateProvider ) {
   $stateProvider.state( 'view1', {
     url: '/view1',
     controller: 'ViewCtrl',
@@ -11,8 +13,10 @@ angular.module( 'myApp.view1', [
   });
 }])
 
-.controller( 'ViewCtrl', function ViewCtrl( $scope ) {
+.controller( 'ViewCtrl', [
+	'$scope', 
+	function ViewCtrl( $scope ) {
 
-})
+}])
 
 ; // don't delete me

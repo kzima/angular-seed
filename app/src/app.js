@@ -5,9 +5,12 @@ angular.module( 'myApp', [
   'ui.router'
 ])
 
-.config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
+.config([
+  '$stateProvider', 
+  '$urlRouterProvider', 
+  function myAppConfig ( $stateProvider, $urlRouterProvider ) {
   $urlRouterProvider.otherwise( '/home' );
-})
+}])
 
 .run([
   '$rootScope', 
