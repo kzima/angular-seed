@@ -42,45 +42,49 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <title>{{pageTitle}}</title>
+    <title ng-bind="page-title">Project Title</title>
   </head>
   <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li ng-class="{active: $state.includes('home')}"><a ui-sref="home">home</a></li>
-            <li ng-class="{active: $state.includes('view2')}"><a ui-sref="view1">View1</a></li>
-          </ul>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </div>
-      <div class="well well-sm">
+    <div id="wrap">
+      <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-          <!-- Here's some values to keep an eye on in the sample in order to understand $state and $stateParams -->
-          $state = <span ng-bind="$state.current.name"></span> *  
-          $stateParams = <span ng-bind="$stateParams | json"></span> * 
-          $state full url = <span ng-bind="$state.$current.url.source"></span>
-          <!-- $state.$current is not a public api, we are using it to
-               display the full url for learning purposes-->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li ng-class="{active: $state.includes('home')}"><a ui-sref="home">home</a></li>
+              <li ng-class="{active: $state.includes('view2')}"><a ui-sref="view1">View1</a></li>
+            </ul>
+          </div><!--/.navbar-collapse -->
         </div>
       </div>
+        <div class="well well-sm">
+          <div class="container">
+            <!-- Here's some values to keep an eye on in the sample in order to understand $state and $stateParams -->
+            $state = <span ng-bind="$state.current.name"></span> *  
+            $stateParams = <span ng-bind="$stateParams | json"></span> * 
+            $state full url = <span ng-bind="$state.$current.url.source"></span>
+            <!-- $state.$current is not a public api, we are using it to
+                 display the full url for learning purposes-->
+          </div>
+        </div>
 
-    <section ui-view></section>
+      <section ui-view></section>
     
-    <div class="container">
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
-    </div> <!-- /container -->
+    </div><!-- /#wrap -->
+
+    <footer class="well well-sm no-margin">
+      <div class="container">
+        2013
+      </div> <!-- /container -->
+    </footer>
+
 
     <!--[if lt IE 7 ]>
     <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
